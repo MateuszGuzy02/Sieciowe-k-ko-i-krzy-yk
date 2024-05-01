@@ -124,14 +124,14 @@ namespace TicTacToe
 
         static void SendWinMessage(int player)
         {
-            byte[] winData = Encoding.ASCII.GetBytes("Win: " + player);
+            byte[] winData = Encoding.ASCII.GetBytes("Wygrwa gracz: " + player);
             stream1.Write(winData, 0, winData.Length);
             stream2.Write(winData, 0, winData.Length);
         }
 
         static void SendDrawMessage()
         {
-            byte[] drawData = Encoding.ASCII.GetBytes("Draw");
+            byte[] drawData = Encoding.ASCII.GetBytes("Remis");
             stream1.Write(drawData, 0, drawData.Length);
             stream2.Write(drawData, 0, drawData.Length);
         }
