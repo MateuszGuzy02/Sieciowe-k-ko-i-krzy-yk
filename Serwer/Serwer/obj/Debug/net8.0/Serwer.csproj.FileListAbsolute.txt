@@ -1,0 +1,15 @@
+C:\Users\Matys\Desktop\Sieciowe-k-ko-i-krzy-yk\Serwer\Serwer\bin\Debug\net8.0\Serwer.exe
+C:\Users\Matys\Desktop\Sieciowe-k-ko-i-krzy-yk\Serwer\Serwer\bin\Debug\net8.0\Serwer.deps.json
+C:\Users\Matys\Desktop\Sieciowe-k-ko-i-krzy-yk\Serwer\Serwer\bin\Debug\net8.0\Serwer.runtimeconfig.json
+C:\Users\Matys\Desktop\Sieciowe-k-ko-i-krzy-yk\Serwer\Serwer\bin\Debug\net8.0\Serwer.dll
+C:\Users\Matys\Desktop\Sieciowe-k-ko-i-krzy-yk\Serwer\Serwer\bin\Debug\net8.0\Serwer.pdb
+C:\Users\Matys\Desktop\Sieciowe-k-ko-i-krzy-yk\Serwer\Serwer\obj\Debug\net8.0\Serwer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Matys\Desktop\Sieciowe-k-ko-i-krzy-yk\Serwer\Serwer\obj\Debug\net8.0\Serwer.AssemblyInfoInputs.cache
+C:\Users\Matys\Desktop\Sieciowe-k-ko-i-krzy-yk\Serwer\Serwer\obj\Debug\net8.0\Serwer.AssemblyInfo.cs
+C:\Users\Matys\Desktop\Sieciowe-k-ko-i-krzy-yk\Serwer\Serwer\obj\Debug\net8.0\Serwer.csproj.CoreCompileInputs.cache
+C:\Users\Matys\Desktop\Sieciowe-k-ko-i-krzy-yk\Serwer\Serwer\obj\Debug\net8.0\Serwer.sourcelink.json
+C:\Users\Matys\Desktop\Sieciowe-k-ko-i-krzy-yk\Serwer\Serwer\obj\Debug\net8.0\Serwer.dll
+C:\Users\Matys\Desktop\Sieciowe-k-ko-i-krzy-yk\Serwer\Serwer\obj\Debug\net8.0\refint\Serwer.dll
+C:\Users\Matys\Desktop\Sieciowe-k-ko-i-krzy-yk\Serwer\Serwer\obj\Debug\net8.0\Serwer.pdb
+C:\Users\Matys\Desktop\Sieciowe-k-ko-i-krzy-yk\Serwer\Serwer\obj\Debug\net8.0\Serwer.genruntimeconfig.cache
+C:\Users\Matys\Desktop\Sieciowe-k-ko-i-krzy-yk\Serwer\Serwer\obj\Debug\net8.0\ref\Serwer.dll
