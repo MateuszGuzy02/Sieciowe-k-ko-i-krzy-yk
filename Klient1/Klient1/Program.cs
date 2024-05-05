@@ -6,16 +6,23 @@ namespace TicTacToeClient1
 {
     class Program
     {
+        static TcpClient client;
+        static NetworkStream stream;
+        static bool isGameOver = false;
+
         static void Main(string[] args)
         {
-            Console.WriteLine("Witaj w grze Kółko i Krzyżyk! Jesteś Graczem 2.");
+            Console.WriteLine("Witaj w grze Kółko i Krzyżyk!");
 
             Console.Write("Podaj adres IP serwera: ");
             string serverIP = Console.ReadLine();
 
-            TcpClient client = new TcpClient(serverIP, 8888);
-            NetworkStream stream = client.GetStream();
+            client = new TcpClient(serverIP, 8888);
+            stream = client.GetStream();
 
+            Console.WriteLine("Połączono z serwerem. Czekanie na drugiego gracza...");
+
+            // Odbieranie informacji o planszy
             byte[] buffer = new byte[1024];
             int bytesRead = stream.Read(buffer, 0, buffer.Length);
             string boardString = Encoding.ASCII.GetString(buffer, 0, bytesRead);
@@ -23,12 +30,14 @@ namespace TicTacToeClient1
             Console.WriteLine("Aktualna plansza:");
             Console.WriteLine(boardString);
 
-            bool isGameOver = false;
+            // Rozpoczęcie pętli gry
             while (!isGameOver)
             {
+                // Odbieranie informacji o turze gracza
                 bytesRead = stream.Read(buffer, 0, buffer.Length);
                 string message = Encoding.ASCII.GetString(buffer, 0, bytesRead);
 
+                // Obsługa różnych komunikatów od serwera
                 if (message.StartsWith("YourTurn"))
                 {
                     Console.WriteLine("Twoja kolej. Podaj numer pola (1-9): ");
@@ -49,10 +58,13 @@ namespace TicTacToeClient1
                     {
                         isGameOver = true;
                         Console.WriteLine("Gra zakończona. Wynik: " + message);
+                        Console.WriteLine("Naciśnij dowolny klawisz, aby zakończyć.");
+                        Console.ReadKey();
                     }
                 }
             }
 
+            // Zakończenie połączenia
             client.Close();
         }
 
@@ -83,4 +95,5 @@ namespace TicTacToeClient1
             return choice;
         }
     }
+
 }
