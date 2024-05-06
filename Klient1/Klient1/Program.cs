@@ -15,7 +15,8 @@ namespace TicTacToeClient1
             Console.WriteLine("Witaj w grze Kółko i Krzyżyk!");
 
             Console.Write("Podaj adres IP serwera: ");
-            string serverIP = Console.ReadLine();
+            //string serverIP = Console.ReadLine();
+            string serverIP = "192.168.0.216";
 
             client = new TcpClient(serverIP, 8888);
             stream = client.GetStream();
@@ -27,8 +28,8 @@ namespace TicTacToeClient1
             int bytesRead = stream.Read(buffer, 0, buffer.Length);
             string boardString = Encoding.ASCII.GetString(buffer, 0, bytesRead);
 
-            Console.WriteLine("Aktualna plansza:");
-            Console.WriteLine(boardString);
+            //Console.WriteLine("Aktualna plansza:");
+            //Console.WriteLine(boardString);
 
             // Rozpoczęcie pętli gry
             while (!isGameOver)
@@ -40,7 +41,7 @@ namespace TicTacToeClient1
                 // Obsługa różnych komunikatów od serwera
                 if (message.StartsWith("YourTurn"))
                 {
-                    Console.WriteLine("Twoja kolej. Podaj numer pola (1-9): ");
+                    Console.Write("Twoja kolej. Podaj numer pola (1-9): ");
                     int choice = GetPlayerChoice();
 
                     byte[] choiceData = Encoding.ASCII.GetBytes(choice.ToString());
@@ -50,22 +51,31 @@ namespace TicTacToeClient1
                 {
                     Console.WriteLine("Oczekiwanie na ruch przeciwnika...");
                 }
+                else if (message.StartsWith("Wygrywa gracz nr."))
+                {
+                    //Console.WriteLine(message);
+                    isGameOver = true;
+                    Console.WriteLine("Gra zakończona. Wynik: " + message);
+                    break; // Zakończ pętlę gry
+                }
+                else if (message.StartsWith("Draw"))
+                {
+                    Console.WriteLine(message);
+                    isGameOver = true;
+                    Console.WriteLine("Gra zakończona. Wynik: " + message);
+                    break; // Zakończ pętlę gry
+                }
                 else
                 {
                     Console.WriteLine(message);
 
-                    if (message.Contains("Win") || message.Contains("Draw"))
-                    {
-                        isGameOver = true;
-                        Console.WriteLine("Gra zakończona. Wynik: " + message);
-                        Console.WriteLine("Naciśnij dowolny klawisz, aby zakończyć.");
-                        Console.ReadKey();
-                    }
+                    
                 }
             }
 
             // Zakończenie połączenia
-            client.Close();
+            //stream.Close();
+            //client.Close();
         }
 
         static int GetPlayerChoice()

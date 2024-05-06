@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Matys\\Desktop\\Sieciowe-k-ko-i-krzy-yk\\Klient1\\Klient1\\Klient1.csproj": {}
+    "C:\\Users\\matys\\Desktop\\Sieciowe-k-ko-i-krzy-yk\\Klient1\\Klient1\\Klient1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Matys\\Desktop\\Sieciowe-k-ko-i-krzy-yk\\Klient1\\Klient1\\Klient1.csproj": {
+    "C:\\Users\\matys\\Desktop\\Sieciowe-k-ko-i-krzy-yk\\Klient1\\Klient1\\Klient1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Matys\\Desktop\\Sieciowe-k-ko-i-krzy-yk\\Klient1\\Klient1\\Klient1.csproj",
+        "projectUniqueName": "C:\\Users\\matys\\Desktop\\Sieciowe-k-ko-i-krzy-yk\\Klient1\\Klient1\\Klient1.csproj",
         "projectName": "Klient1",
-        "projectPath": "C:\\Users\\Matys\\Desktop\\Sieciowe-k-ko-i-krzy-yk\\Klient1\\Klient1\\Klient1.csproj",
-        "packagesPath": "C:\\Users\\Matys\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Matys\\Desktop\\Sieciowe-k-ko-i-krzy-yk\\Klient1\\Klient1\\obj\\",
+        "projectPath": "C:\\Users\\matys\\Desktop\\Sieciowe-k-ko-i-krzy-yk\\Klient1\\Klient1\\Klient1.csproj",
+        "packagesPath": "C:\\Users\\matys\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\matys\\Desktop\\Sieciowe-k-ko-i-krzy-yk\\Klient1\\Klient1\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Matys\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\matys\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {

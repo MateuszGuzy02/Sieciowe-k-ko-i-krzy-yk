@@ -32,12 +32,18 @@ namespace TicTacToe
 
             SendBoard();
 
-            while (!CheckWin())
+            while (true)
             {
                 HandlePlayerTurn();
+                if (CheckWin())
+                {
+                    SendWinMessage(currentPlayer);
+                    break; // Zakończ pętlę, jeśli gra jest zakończona
+                }
                 SwapPlayers();
             }
 
+            // Zakończenie gry - zamknięcie połączeń
             player1.Close();
             player2.Close();
             listener.Stop();
@@ -124,14 +130,24 @@ namespace TicTacToe
 
         static void SendWinMessage(int player)
         {
-            byte[] winData = Encoding.ASCII.GetBytes("Wygrwa gracz: " + player);
-            stream1.Write(winData, 0, winData.Length);
-            stream2.Write(winData, 0, winData.Length);
+            string winMessage = "Wygrywa gracz nr. " + player;
+            byte[] winData = Encoding.ASCII.GetBytes(winMessage);
+
+            // Wysyłamy komunikat tylko do gracza, który wygrał
+            if (player == 1)
+            {
+                stream1.Write(winData, 0, winData.Length);
+            }
+            else if (player == 2)
+            {
+                stream2.Write(winData, 0, winData.Length);
+            }
+
         }
 
         static void SendDrawMessage()
         {
-            byte[] drawData = Encoding.ASCII.GetBytes("Remis");
+            byte[] drawData = Encoding.ASCII.GetBytes("Draw");
             stream1.Write(drawData, 0, drawData.Length);
             stream2.Write(drawData, 0, drawData.Length);
         }
