@@ -21,10 +21,13 @@ namespace TicTacToe
 
             player1 = listener.AcceptTcpClient();
             Console.WriteLine("Gracz 1 dołączył.");
+            
             SendTurn(player1.GetStream(), true); // Informujemy gracza 1, że to jego tura
+
 
             player2 = listener.AcceptTcpClient();
             Console.WriteLine("Gracz 2 dołączył.");
+            
             SendTurn(player2.GetStream(), false); // Informujemy gracza 2, że to nie jego tura
 
             stream1 = player1.GetStream();
@@ -133,21 +136,13 @@ namespace TicTacToe
             string winMessage = "Wygrywa gracz nr. " + player;
             byte[] winData = Encoding.ASCII.GetBytes(winMessage);
 
-            // Wysyłamy komunikat tylko do gracza, który wygrał
-            if (player == 1)
-            {
-                stream1.Write(winData, 0, winData.Length);
-            }
-            else if (player == 2)
-            {
-                stream2.Write(winData, 0, winData.Length);
-            }
-
+            stream1.Write(winData, 0, winData.Length);
+            stream2.Write(winData, 0, winData.Length);
         }
 
         static void SendDrawMessage()
         {
-            byte[] drawData = Encoding.ASCII.GetBytes("Draw");
+            byte[] drawData = Encoding.ASCII.GetBytes("Remis");
             stream1.Write(drawData, 0, drawData.Length);
             stream2.Write(drawData, 0, drawData.Length);
         }

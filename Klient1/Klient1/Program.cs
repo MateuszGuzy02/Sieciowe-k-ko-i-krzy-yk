@@ -8,31 +8,30 @@ namespace TicTacToeClient1
     {
         static TcpClient client;
         static NetworkStream stream;
-        static bool isGameOver = false;
 
         static void Main(string[] args)
         {
             Console.WriteLine("Witaj w grze Kółko i Krzyżyk!");
 
             Console.Write("Podaj adres IP serwera: ");
-            //string serverIP = Console.ReadLine();
-            string serverIP = "192.168.0.216";
+            string serverIP = Console.ReadLine();
+            //string serverIP = "192.168.0.216";
 
             client = new TcpClient(serverIP, 8888);
             stream = client.GetStream();
 
-            Console.WriteLine("Połączono z serwerem. Czekanie na drugiego gracza...");
+            Console.WriteLine("Połączono z serwerem.");
+
 
             // Odbieranie informacji o planszy
             byte[] buffer = new byte[1024];
             int bytesRead = stream.Read(buffer, 0, buffer.Length);
             string boardString = Encoding.ASCII.GetString(buffer, 0, bytesRead);
 
-            //Console.WriteLine("Aktualna plansza:");
-            //Console.WriteLine(boardString);
+
 
             // Rozpoczęcie pętli gry
-            while (!isGameOver)
+            while (true)
             {
                 // Odbieranie informacji o turze gracza
                 bytesRead = stream.Read(buffer, 0, buffer.Length);
@@ -51,31 +50,22 @@ namespace TicTacToeClient1
                 {
                     Console.WriteLine("Oczekiwanie na ruch przeciwnika...");
                 }
-                else if (message.StartsWith("Wygrywa gracz nr."))
+                else if (message.StartsWith("Wygrywa gracz nr.") || message.StartsWith("Remis"))
                 {
-                    //Console.WriteLine(message);
-                    isGameOver = true;
-                    Console.WriteLine("Gra zakończona. Wynik: " + message);
-                    break; // Zakończ pętlę gry
-                }
-                else if (message.StartsWith("Draw"))
-                {
-                    Console.WriteLine(message);
-                    isGameOver = true;
                     Console.WriteLine("Gra zakończona. Wynik: " + message);
                     break; // Zakończ pętlę gry
                 }
                 else
                 {
                     Console.WriteLine(message);
-
-                    
                 }
+
+
             }
 
             // Zakończenie połączenia
-            //stream.Close();
-            //client.Close();
+            stream.Close();
+            client.Close();
         }
 
         static int GetPlayerChoice()
