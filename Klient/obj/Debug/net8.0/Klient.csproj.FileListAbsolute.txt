@@ -1,0 +1,15 @@
+C:\Users\matys\Desktop\Sieciowe-k-ko-i-krzy-yk\Klient\bin\Debug\net8.0\Klient.exe
+C:\Users\matys\Desktop\Sieciowe-k-ko-i-krzy-yk\Klient\bin\Debug\net8.0\Klient.deps.json
+C:\Users\matys\Desktop\Sieciowe-k-ko-i-krzy-yk\Klient\bin\Debug\net8.0\Klient.runtimeconfig.json
+C:\Users\matys\Desktop\Sieciowe-k-ko-i-krzy-yk\Klient\bin\Debug\net8.0\Klient.dll
+C:\Users\matys\Desktop\Sieciowe-k-ko-i-krzy-yk\Klient\bin\Debug\net8.0\Klient.pdb
+C:\Users\matys\Desktop\Sieciowe-k-ko-i-krzy-yk\Klient\obj\Debug\net8.0\Klient.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\matys\Desktop\Sieciowe-k-ko-i-krzy-yk\Klient\obj\Debug\net8.0\Klient.AssemblyInfoInputs.cache
+C:\Users\matys\Desktop\Sieciowe-k-ko-i-krzy-yk\Klient\obj\Debug\net8.0\Klient.AssemblyInfo.cs
+C:\Users\matys\Desktop\Sieciowe-k-ko-i-krzy-yk\Klient\obj\Debug\net8.0\Klient.csproj.CoreCompileInputs.cache
+C:\Users\matys\Desktop\Sieciowe-k-ko-i-krzy-yk\Klient\obj\Debug\net8.0\Klient.sourcelink.json
+C:\Users\matys\Desktop\Sieciowe-k-ko-i-krzy-yk\Klient\obj\Debug\net8.0\Klient.dll
+C:\Users\matys\Desktop\Sieciowe-k-ko-i-krzy-yk\Klient\obj\Debug\net8.0\refint\Klient.dll
+C:\Users\matys\Desktop\Sieciowe-k-ko-i-krzy-yk\Klient\obj\Debug\net8.0\Klient.pdb
+C:\Users\matys\Desktop\Sieciowe-k-ko-i-krzy-yk\Klient\obj\Debug\net8.0\Klient.genruntimeconfig.cache
+C:\Users\matys\Desktop\Sieciowe-k-ko-i-krzy-yk\Klient\obj\Debug\net8.0\ref\Klient.dll
