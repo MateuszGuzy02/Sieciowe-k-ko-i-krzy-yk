@@ -21,14 +21,12 @@ namespace TicTacToe
 
             player1 = listener.AcceptTcpClient();
             Console.WriteLine("Gracz 1 dołączył.");
-            
-            SendTurn(player1.GetStream(), true); // Informujemy gracza 1, że to jego tura
+            SendTurn(player1.GetStream(), true);
 
 
             player2 = listener.AcceptTcpClient();
             Console.WriteLine("Gracz 2 dołączył.");
-            
-            SendTurn(player2.GetStream(), false); // Informujemy gracza 2, że to nie jego tura
+            SendTurn(player2.GetStream(), false);
 
             stream1 = player1.GetStream();
             stream2 = player2.GetStream();
@@ -41,12 +39,11 @@ namespace TicTacToe
                 if (CheckWin())
                 {
                     SendWinMessage(currentPlayer);
-                    break; // Zakończ pętlę, jeśli gra jest zakończona
+                    break;
                 }
                 SwapPlayers();
             }
 
-            // Zakończenie gry - zamknięcie połączeń
             player1.Close();
             player2.Close();
             listener.Stop();
@@ -64,6 +61,7 @@ namespace TicTacToe
                 board[0], board[1], board[2], board[3], board[4], board[5], board[6], board[7], board[8]);
 
             byte[] boardData = Encoding.ASCII.GetBytes(boardString);
+
             stream1.Write(boardData, 0, boardData.Length);
             stream2.Write(boardData, 0, boardData.Length);
         }
@@ -73,8 +71,8 @@ namespace TicTacToe
             NetworkStream currentPlayerStream = (currentPlayer == 1) ? stream1 : stream2;
             NetworkStream otherPlayerStream = (currentPlayer == 1) ? stream2 : stream1;
 
-            SendTurn(currentPlayerStream, true); // Informujemy aktualnego gracza, że to jego tura
-            SendTurn(otherPlayerStream, false); // Informujemy drugiego gracza, że to nie jego tura
+            SendTurn(currentPlayerStream, true);
+            SendTurn(otherPlayerStream, false);
 
             byte[] buffer = new byte[1];
             currentPlayerStream.Read(buffer, 0, buffer.Length);
@@ -92,7 +90,6 @@ namespace TicTacToe
             }
         }
 
-        // Sprawdź, czy jest zwycięzca lub remis
         static bool CheckWin()
         {
             // Sprawdź wiersze, kolumny i przekątne

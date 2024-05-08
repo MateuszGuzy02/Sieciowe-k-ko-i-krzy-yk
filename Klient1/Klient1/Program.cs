@@ -26,9 +26,7 @@ namespace TicTacToeClient1
             // Odbieranie informacji o planszy
             byte[] buffer = new byte[1024];
             int bytesRead = stream.Read(buffer, 0, buffer.Length);
-            string boardString = Encoding.ASCII.GetString(buffer, 0, bytesRead);
-
-
+            
 
             // Rozpoczęcie pętli gry
             while (true)
@@ -46,24 +44,21 @@ namespace TicTacToeClient1
                     byte[] choiceData = Encoding.ASCII.GetBytes(choice.ToString());
                     stream.Write(choiceData, 0, choiceData.Length);
                 }
+
                 else if (message.StartsWith("OpponentTurn"))
-                {
                     Console.WriteLine("Oczekiwanie na ruch przeciwnika...");
-                }
+
                 else if (message.StartsWith("Wygrywa gracz nr.") || message.StartsWith("Remis"))
                 {
                     Console.WriteLine("Gra zakończona. Wynik: " + message);
-                    break; // Zakończ pętlę gry
-                }
-                else
-                {
-                    Console.WriteLine(message);
+                    break; 
                 }
 
+                else
+                    Console.WriteLine(message);
 
             }
 
-            // Zakończenie połączenia
             stream.Close();
             client.Close();
         }
@@ -72,6 +67,7 @@ namespace TicTacToeClient1
         {
             int choice = 0;
             bool isValidChoice = false;
+
             while (!isValidChoice)
             {
                 string input = Console.ReadLine();
@@ -79,21 +75,16 @@ namespace TicTacToeClient1
                 if (int.TryParse(input, out choice))
                 {
                     if (choice >= 1 && choice <= 9)
-                    {
                         isValidChoice = true;
-                    }
+
                     else
-                    {
                         Console.WriteLine("Podano niepoprawny numer pola. Wpisz liczbę od 1 do 9.");
-                    }
                 }
+
                 else
-                {
                     Console.WriteLine("Podano niepoprawną wartość. Wpisz liczbę od 1 do 9.");
-                }
             }
             return choice;
         }
     }
-
 }
